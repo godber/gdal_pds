@@ -1,11 +1,12 @@
-from nose.tools import *
-import NAME
+import unittest
+import gdal_pds
 
-def setup():
-    print "SETUP!"
 
-def teardown():
-    print "TEAR DOWN!"
+class TestGdalPds(unittest.TestCase):
 
-def test_basic():
-    print "I RAN!"
+    def setUp(self):
+        self.image_path = "data/1F345867992EFFB0J3P1212L0M1.img"
+        self.image = gdal_pds.PDSImage(self.image_path)
+
+    def test_basic(self):
+        assert self.image.filepath == self.image_path
