@@ -1,5 +1,8 @@
 *.py[cod]
 
+data
+.vagrant
+
 # C extensions
 *.so
 
