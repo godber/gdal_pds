@@ -1,39 +1,28 @@
-from collections import OrderedDict
+import numpy as np
+from osgeo import gdal
+
+from gdal_pds import label
+
 
 class PDSImage(object):
 
     def __init__(self, filepath):
         self.filepath = filepath
-        self.label = self.parse_label()
+        self.label = label.read(self.filepath)
+        self._gdal_img = gdal.Open(filepath)
+        self.num_bands = self._gdal_img.RasterCount
+        self.image = self._band_data()
 
-    def parse_label(self):
+    def _band_data(self):
         """
-        Parses a PDS Label from a file, returns an ordered dict
+        Returns the band data as a stacked Numpy Array
         """
-        label = OrderedDict()
-        in_block = None
-        with open(self.filepath) as f:
-            for line in f.readlines():
-                line = line.rstrip()  # strip off the ^M and any trailing garbage
-                if '=' in line:
-                    key, value = line.split('=')
-                    key = key.strip()
-                    value = value.strip()
-                    if key in ['OBJECT', 'GROUP']:
-                        in_block = value
-                        label[value] = OrderedDict([('_type', key)])
-                    elif key in ['END_OBJECT', 'END_GROUP']:
-                        in_block = None
-                    else:
-                        if in_block:
-                            label[in_block][key] = value
-                        else:
-                            label[key] = value
-
-                if line.strip() == 'END':
-                    break
-
-        return label
-
-    def print_path():
-        print self.filepath
+        band_data_array = None
+        # GDAL bands are numbered starting at 1
+        for band in range(1, self.num_bands + 1):
+            band_data = self._gdal_img.GetRasterBand(band).ReadAsArray()
+            if band == 1:
+                band_data_array = band_data
+            else:
+                band_data_array = np.dstack((self.image, band_data))
+        return band_data_array
