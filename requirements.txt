@@ -1,0 +1,4 @@
+GDAL==1.10.0
+argparse==1.2.1
+distribute==0.6.24
+wsgiref==0.1.2
