@@ -1,5 +1,9 @@
 import numpy as np
-from osgeo import gdal
+
+try:
+    from osgeo import gdal
+except ImportError:
+    import gdal
 
 from gdal_pds import label
 
