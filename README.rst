@@ -3,6 +3,18 @@ gdal_pds
 
 A PDS Image library based on the GDAL implementation.
 
+TODO
+====
+
+While this TODO section is present, this module is unstable since its being
+worked on.::
+
+    [ ] Fix multiline labels.
+    [ ] Write tests for image data.
+    [ ] Add tests for multiple instrument data files.
+    [x] Write Sample data retrieval script.
+
+
 Installation
 ============
 
@@ -18,8 +30,8 @@ Then create my virtualenv for the project and install the GDAL bindings in
 the environment.  Make note of the environment variables that must be set
 before building the GDAL bindings.::
 
-    export cplus_include_path=/usr/include/gdal
-    export c_include_path=/usr/include/gdal
+    export CPLUS_INCLUDE_PATH=/usr/include/gdal
+    export C_INCLUDE_PATH=/usr/include/gdal
     pip install gdal
 
 
