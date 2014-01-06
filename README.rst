@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/godber/gdal_pds.png?branch=master   :target: https://travis-ci.org/godber/gdal_pds
-
+.. image:: https://travis-ci.org/godber/gdal_pds.png?branch=master
+   :target: https://travis-ci.org/godber/gdal_pds
 
 gdal_pds
 ~~~~~~~~
