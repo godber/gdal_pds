@@ -11,6 +11,6 @@ before_install:
  - sudo apt-get update -qq
  - sudo apt-get -qy build-dep python-numpy python-gdal
  - sudo apt-get install -qq libgdal1h libgdal1-dev python-dev
-
-# command to run tests
+before_script:
+ - python get_test_data.py
 script: nosetests
