@@ -1,6 +1,7 @@
 *.py[cod]
 
 data
+test_data
 .vagrant
 
 # C extensions
