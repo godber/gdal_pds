@@ -115,9 +115,11 @@ def read(file_path):
                     # '_emptyline'
                     key = '_emptyline'
                     value = True
-                elif line.startswith('/*'):
+                elif '/*' in line:
                     # comments are preserved with a special key value
                     # '_comment'
+                    # TODO: comments at the end of lines with assignment
+                    # statements will not be handled correctly.
                     key = '_comment'
                     value = line
                 else:
