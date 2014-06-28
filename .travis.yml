@@ -12,4 +12,4 @@ before_install:
  - sudo apt-get install -qq libgdal1h libgdal1-dev python-dev
 before_script:
  - python get_test_data.py
-script: nosetests
+script: py.test tests/
