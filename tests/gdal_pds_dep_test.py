@@ -1,4 +1,3 @@
-from nose.tools import *
 import gdal_pds
 
 def test_gdal_present():
