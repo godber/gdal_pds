@@ -81,12 +81,13 @@ Example Usage
 How to use gdal_pds::
 
     >>> from gdal_pds import PDSImage
-    >>> image = PdsImage('1F345867992EFFB0J3P1212L0M1.img')
-    # Returns a numpy array with the image data
-    >>> image.data
+    >>> image = PDSImage('1F345867992EFFB0J3P1212L0M1.img')
     # returns the PDS Label as a Python dictionary
     >>> image.label
     >>> image.label['INSTRUMENT_ID']
     "FRONT_HAZCAM_LEFT"
-    # Display the image
-    >>> image.imshow()
+
+    # Load matplotlib and show the image
+    >>> from matplotlib import pyplot as plt
+    >>> plt.imshow(image.image, cmap=plt.get_cmap("gray"))
+    >>> plt.show()
