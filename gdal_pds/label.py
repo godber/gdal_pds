@@ -46,13 +46,18 @@ def read(file_path):
             if line.strip() == 'END':
                 break
 
+            # FIXME: Unfortunately this will match = signs in lines that don't
+            # contain the the 'key = ', more evidence I need to throw this all
+            # away
             if '=' in line:
                 # Lines with = in them are essentially key value pairs
                 # anything else is a wrapped line, comment, empty line or
                 # continued value
-                key, value = line.split('=')
-                key = key.strip()
-                value = value.strip()
+                key_value = line.split('=')  # don't use multiple assignment
+                                             # here, because it won't work for
+                                             # lines with two = signs.
+                key = key_value[0].strip()
+                value = key_value[1].strip()
 
                 # Since there is an = there should be a value, if there is not
                 # assume the line is wrapped.  These differ from  multiline
