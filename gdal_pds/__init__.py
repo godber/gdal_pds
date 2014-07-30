@@ -15,9 +15,9 @@ class PDSImage(object):
         self.label = label.read(self.filepath)
         self._gdal_img = gdal.Open(filepath)
         self.num_bands = self._gdal_img.RasterCount
-        self.image = self._band_data()
 
-    def _band_data(self):
+    @property
+    def image(self):
         """
         Returns the band data as a stacked Numpy Array
         """
@@ -28,5 +28,5 @@ class PDSImage(object):
             if band == 1:
                 band_data_array = band_data
             else:
-                band_data_array = np.dstack((self.image, band_data))
+                band_data_array = np.dstack((band_data_array, band_data))
         return band_data_array
