@@ -12,7 +12,7 @@ config = {
     'version': '0.1',
     'install_requires': [
         'GDAL>=1.10.0,<=1.10.1',
-        'numpy==1.8.1'
+        'numpy>=1.8.1'
         ],
     'tests_require': ['pytest>=2.5.0'],
     'packages': ['gdal_pds'],
