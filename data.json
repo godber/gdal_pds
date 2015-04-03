@@ -1,5 +1,14 @@
 {
     "1F345867992EFFB0J3P1212L0M1.img": {
         "url": "http://pds-imaging.jpl.nasa.gov/data/mer/mer1ho_0xxx/data/sol2452/edr/1f345867992effb0j3p1212l0m1.img"
+    },
+    "1N131118189EFF0500P1800L0M1.img": {
+        "url": "http://pds-imaging.jpl.nasa.gov/data/mer/opportunity/mer1no_0xxx/data/sol0033/edr/1n131118189eff0500p1800l0m1.img"
+    },
+    "1P130664189EFF0454P2574L7M1.img": {
+        "url": "http://pds-imaging.jpl.nasa.gov/data/mer/opportunity/mer1po_0xxx/data/sol0028/edr/1p130664189eff0454p2574l7m1.img"
+    },
+    "1P205337908EFF73U6P2438R2M1.img": {
+        "url": "http://pds-imaging.jpl.nasa.gov/data/mer/opportunity/mer1po_0xxx/data/sol0869/edr/1p205337908eff73u6p2438r2m1.img"
     }
 }
