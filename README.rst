@@ -4,6 +4,8 @@
 gdal_pds
 ~~~~~~~~
 
+**NOTE!!** Don't bother using this, you should use `planetaryimage from PlanetaryPy <https://github.com/planetarypy/planetaryimage>`_ instead.
+
 A PDS Image library based on the GDAL implementation.
 
 TODO
