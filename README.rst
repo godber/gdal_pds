@@ -1,5 +1,7 @@
-.. image:: https://travis-ci.org/godber/gdal_pds.png?branch=master
-   :target: https://travis-ci.org/godber/gdal_pds
+.. image:: https://img.shields.io/badge/Use_Instead-planetaryimage-red.svg
+   :target: https://github.com/planetarypy/planetaryimage
+
+
 
 gdal_pds
 ~~~~~~~~
